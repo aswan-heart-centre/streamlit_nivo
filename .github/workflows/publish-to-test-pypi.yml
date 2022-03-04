@@ -14,9 +14,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 16.14
-          path: nivo_chart/frontend
       - run: yarn
+        working-directory: nivo_chart/frontend
       - run: yarn build
+        working-directory: nivo_chart/frontend
       - uses: actions/checkout@master
       - name: Set up Python 3.9
         uses: actions/setup-python@v1
