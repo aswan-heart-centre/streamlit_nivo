@@ -18,7 +18,6 @@ jobs:
         working-directory: nivo_chart/frontend
       - run: yarn build
         working-directory: nivo_chart/frontend
-      - uses: actions/checkout@master
       - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
@@ -37,7 +36,9 @@ jobs:
         with:
           password: ${{ secrets.TEST_PYPI_API_TOKEN }}
           repository_url: https://test.pypi.org/legacy/
+          packages_dir: dist/
       - name: Publish distribution 📦 to PyPI
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
+          packages_dir: dist/
