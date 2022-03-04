@@ -12,7 +12,7 @@ pip install streamlit-nivo
 
 ```py
 import streamlit as st
-import nivo_chart
+import nivo_chart as nc
 
 bump_chart = {
     "data": [
@@ -182,7 +182,7 @@ bump_chart = {
         "axisRight": None,
     },
 }
-nivo_chart(data=bump_chart["data"], layout=bump_chart["layout"])
+nc.nivo_chart(data=bump_chart["data"], layout=bump_chart["layout"])
 
 st.markdown("---")
 calendar_chart = {
@@ -1086,7 +1086,7 @@ calendar_chart = {
     },
 }
 
-nivo_chart(data=calendar_chart["data"], layout=calendar_chart["layout"])
+nc.nivo_chart(data=calendar_chart["data"], layout=calendar_chart["layout"])
 
 st.markdown("---")
 
@@ -1137,7 +1137,7 @@ chord_chart = {
         ],
     },
 }
-nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"])
+nc.nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"])
 
 ```
 
