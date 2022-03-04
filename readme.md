@@ -12,7 +12,7 @@ pip install streamlit-nivo
 
 ```py
 import streamlit as st
-import nivo_chart from streamlit-nivo
+import nivo_chart
 
 bump_chart = {
     "data": [
