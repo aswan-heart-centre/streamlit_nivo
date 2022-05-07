@@ -43,7 +43,7 @@ else:
 # `declare_component` and call it done. The wrapper allows us to customize
 # our component's API: we can pre-process its input args, post-process its
 # output value, and add a docstring for users.
-def nivo_chart(data, layout):
+def nivo_chart(data, layout, key=None):
     """Create a new instance of "nivo_chart".
 
     Parameters
@@ -52,7 +52,10 @@ def nivo_chart(data, layout):
         Required. The data to be visualized.
     layout: dict
         Required. The layout of the visualization.
-
+    key: str or None 
+        An optional key that uniquely identifies this component. If this is
+        None, and the component's arguments are changed, the component will
+        be re-mounted in the Streamlit frontend and lose its current state.
     Returns
     -------
     none
@@ -65,7 +68,7 @@ def nivo_chart(data, layout):
     #
     # "default" is a special argument that specifies the initial return
     # value of the component before the user has interacted with it.
-    component_value = _component_func(data=data, layout=layout)
+    component_value = _component_func(data=data, layout=layout, key=key)
 
     # We could modify the value returned from the component if we wanted.
     # There's no need to do this in our simple example - but it's an option.
@@ -246,7 +249,7 @@ if not _RELEASE:
             "axisRight": None,
         },
     }
-    nivo_chart(data=bump_chart["data"], layout=bump_chart["layout"])
+    nivo_chart(data=bump_chart["data"], layout=bump_chart["layout"], key="bump_chart")
 
     st.markdown("---")
     calendar_chart = {
@@ -1150,7 +1153,7 @@ if not _RELEASE:
         },
     }
 
-    nivo_chart(data=calendar_chart["data"], layout=calendar_chart["layout"])
+    nivo_chart(data=calendar_chart["data"], layout=calendar_chart["layout"], key="calendar_chart")
 
     st.markdown("---")
 
@@ -1201,4 +1204,4 @@ if not _RELEASE:
             ],
         },
     }
-    nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"])
+    nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"], key="chord_chart")

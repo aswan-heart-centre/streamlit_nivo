@@ -182,7 +182,7 @@ bump_chart = {
         "axisRight": None,
     },
 }
-nc.nivo_chart(data=bump_chart["data"], layout=bump_chart["layout"])
+nc.nivo_chart(data=bump_chart["data"], layout=bump_chart["layout"], key="bump_chart")
 
 st.markdown("---")
 calendar_chart = {
@@ -1086,7 +1086,7 @@ calendar_chart = {
     },
 }
 
-nc.nivo_chart(data=calendar_chart["data"], layout=calendar_chart["layout"])
+nc.nivo_chart(data=calendar_chart["data"], layout=calendar_chart["layout"], key="calendar_chart")
 
 st.markdown("---")
 
@@ -1137,7 +1137,7 @@ chord_chart = {
         ],
     },
 }
-nc.nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"])
+nc.nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"], key="chord_chart")
 
 ```
 
