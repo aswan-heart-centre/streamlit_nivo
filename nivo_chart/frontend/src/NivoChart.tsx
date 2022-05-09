@@ -1,6 +1,4 @@
 import {
-  Streamlit,
-  StreamlitComponentBase,
   withStreamlitConnection,
   ComponentProps,
 } from "streamlit-component-lib"
