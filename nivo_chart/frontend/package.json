@@ -9,18 +9,10 @@
     "@nivo/core": "^0.79.0",
     "@nivo/heatmap": "^0.79.1",
     "@nivo/tooltip": "^0.79.0",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.13.1",
-    "@types/react-dom": "^18.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "streamlit-component-lib": "^1.3.0",
-    "typescript": "~3.8.0"
+    "streamlit-component-lib": "^1.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,5 +35,15 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "."
+  "homepage": ".",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/react": "^10.0.4",
+    "@testing-library/user-event": "^10.1.0",
+    "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.4",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.7",
+    "typescript": "~3.8.3"
+  }
 }
