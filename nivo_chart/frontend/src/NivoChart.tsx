@@ -1,29 +1,30 @@
 import {
+  Streamlit,
   withStreamlitConnection,
   ComponentProps,
 } from "streamlit-component-lib"
-import React from "react"
+import React, { useEffect } from "react"
 import { ResponsiveBump } from "@nivo/bump"
 import { ResponsiveCalendar } from "@nivo/calendar"
 import { ResponsiveChord } from "@nivo/chord"
 
 const NivoChart: React.FC<ComponentProps> = (props) => {
-  const { data, layout } = props.args
-
+  const { data, layout, key } = props.args
   const style: React.CSSProperties = {}
-
   style.width = layout.width || "600px"
   style.height = layout.height || "360px"
-
+  useEffect(() => {
+    Streamlit.setFrameHeight()
+  })
   return (
-    <>
+    <div style={style} key={key}>
       {layout.title && <h3>{layout.title}</h3>}
       {layout.type === "bump" && <ResponsiveBump data={data} {...layout} />}
       {layout.type === "calendar" && (
         <ResponsiveCalendar data={data} {...layout} />
       )}
       {layout.type === "chord" && <ResponsiveChord data={data} {...layout} />}
-    </>
+    </div>
   )
 }
 
