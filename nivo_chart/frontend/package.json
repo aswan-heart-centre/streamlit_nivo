@@ -8,6 +8,7 @@
     "@nivo/chord": "^0.79.1",
     "@nivo/core": "^0.79.0",
     "@nivo/heatmap": "^0.79.1",
+    "@nivo/sankey": "^0.79.1",
     "@nivo/tooltip": "^0.79.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
