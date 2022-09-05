@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="streamlit-nivo",
-    version="0.1.7",
+    version="0.1.8",
     author="Ahmed Saleh",
     author_email="a.saleh.ismael@gmail.com",
     description="Render Nivo charts in Streamlit",
