@@ -5,6 +5,7 @@ this project was created to allow render [Nivo](https://nivo.rocks/) charts
 - Chord Charts
 - Bump Charts
 - Calendar Charts
+- Sankey Charts
 
 ```
 pip install streamlit-nivo 
@@ -1138,6 +1139,74 @@ chord_chart = {
     },
 }
 nc.nivo_chart(data=chord_chart["data"], layout=chord_chart["layout"], key="chord_chart")
+
+sankey_chart = {
+    "data": {
+        "nodes": [
+            {"id": "John", "nodeColor": "hsl(52, 70%, 50%)"},
+            {"id": "Raoul", "nodeColor": "hsl(359, 70%, 50%)"},
+            {"id": "Jane", "nodeColor": "hsl(331, 70%, 50%)"},
+            {"id": "Marcel", "nodeColor": "hsl(267, 70%, 50%)"},
+            {"id": "Ibrahim", "nodeColor": "hsl(340, 70%, 50%)"},
+            {"id": "Junko", "nodeColor": "hsl(81, 70%, 50%)"},
+        ],
+        "links": [
+            {"source": "Marcel", "target": "Jane", "value": 80},
+            {"source": "Ibrahim", "target": "Raoul", "value": 162},
+            {"source": "Ibrahim", "target": "John", "value": 44},
+            {"source": "Ibrahim", "target": "Jane", "value": 58},
+            {"source": "Ibrahim", "target": "Marcel", "value": 73},
+            {"source": "Junko", "target": "Jane", "value": 50},
+            {"source": "Junko", "target": "Marcel", "value": 12},
+            {"source": "John", "target": "Junko", "value": 117},
+            {"source": "John", "target": "Raoul", "value": 159},
+            {"source": "Raoul", "target": "Marcel", "value": 81},
+        ],
+    },
+    "layout": {
+        "title": "Sankey Chart",
+        "type": "sankey",
+        "height": 500,
+        "margin": {"top": 40, "right": 160, "bottom": 40, "left": 50},
+        "align": "justify",
+        "colors": {"scheme": "category10"},
+        "nodeOpacity": 1,
+        "nodeHoverOthersOpacity": 0.35,
+        "nodeThickness": 18,
+        "nodeSpacing": 24,
+        "nodeBorderWidth": 0,
+        "nodeBorderColor": {"from": "color", "modifiers": [["darker", 0.8]]},
+        "nodeBorderRadius": 3,
+        "linkOpacity": 0.5,
+        "linkHoverOthersOpacity": 0.1,
+        "linkContract": 3,
+        "enableLinkGradient": True,
+        "labelPosition": "outside",
+        "labelOrientation": "vertical",
+        "labelPadding": 16,
+        "labelTextColor": {
+            "from": "color",
+            "modifiers": [["darker", 1]],
+        },
+        "legends": [
+            {
+                "anchor": "bottom-right",
+                "direction": "column",
+                "translateX": 130,
+                "itemWidth": 100,
+                "itemHeight": 14,
+                "itemDirection": "right-to-left",
+                "itemsSpacing": 2,
+                "itemTextColor": "#999",
+                "symbolSize": 14,
+                "effects": [{"on": "hover", "style": {"itemTextColor": "#000"}}],
+            },
+        ],
+    },
+}
+nivo_chart(
+    data=sankey_chart["data"], layout=sankey_chart["layout"], key="sankey_chart"
+)
 
 ```
 
